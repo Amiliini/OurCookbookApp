@@ -12,6 +12,7 @@ export default class ShoppingList extends React.Component {
 			removeIndex:-1,
 			editIndex:-1,
 			search:"",
+			keyword:"",
 			price:0
 		}
 	}
@@ -23,15 +24,20 @@ export default class ShoppingList extends React.Component {
 	}
 	
 	searchByType = () => {
-		if(this.state.price) {		
-			this.props.getList(this.state.search,this.state.price);
-		} else {
+	
 			this.props.getList(this.state.search)	
-		}	
-		this.setState({
-			search:"",
-			price:0
-		})
+			this.setState({
+				search:""
+			})
+	
+	}
+		
+	searchByKeyword = () => {
+		this.props.getList(this.state.keyword)	
+			this.setState({
+				keyword:""
+	
+			})
 	}
 	
 	changeToRemoveMode = (index) => {
@@ -86,18 +92,20 @@ export default class ShoppingList extends React.Component {
 					name="search"
 					onChange={this.onChange}
 					value={this.state.search}/>
-			<label htmlFor="price">Costing maximum of:</label>
-			<input type="number"
-					name="price"
-					step="0.01"
+				<Button onClick={this.searchByType} style={{marginLeft:10}}>Search</Button>
+				<label htmlFor="searchkeyword">Search by keyword:</label>
+			<input type="text"
+					name="keyword"
 					onChange={this.onChange}
-					value={this.state.price}/>
-			<Button onClick={this.searchByType} style={{marginLeft:10}}>Search</Button>
+					value={this.state.keyword}/>
+				<Button onClick={this.searchByKeyword} style={{marginLeft:10}}>Search</Button>
 			<Table striped>
 				<Table.Header>
 					<Table.HeaderCell>Item type</Table.HeaderCell>
-					<Table.HeaderCell>Count</Table.HeaderCell>
-					<Table.HeaderCell>Price</Table.HeaderCell>
+					<Table.HeaderCell>Aineet</Table.HeaderCell>
+					<Table.HeaderCell>Ohje</Table.HeaderCell>
+						<Table.HeaderCell>Keyword</Table.HeaderCell>
+					<Table.HeaderCell>count</Table.HeaderCell>
 					<Table.HeaderCell>Remove</Table.HeaderCell>
 					<Table.HeaderCell>Edit</Table.HeaderCell>
 				</Table.Header>

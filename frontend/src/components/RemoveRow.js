@@ -8,7 +8,9 @@ export default class RemoveRow extends React.Component {
 		return(
 			<Table.Row>
 				<Table.Cell>{this.props.item.type}</Table.Cell>
-				<Table.Cell>{this.props.item.count}</Table.Cell>
+				<Table.Cell>{this.props.item.aineet}</Table.Cell>
+				<Table.Cell>{this.props.item.ohje}</Table.Cell>
+				<Table.Cell>{this.props.item.keyword}</Table.Cell>
 				<Table.Cell>{this.props.item.price}</Table.Cell>
 				<Table.Cell><Button color="grey"
 				onClick={() => this.props.cancel()}>Cancel</Button></Table.Cell>

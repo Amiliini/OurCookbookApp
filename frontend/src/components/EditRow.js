@@ -36,10 +36,22 @@ export default class EditRow extends React.Component {
 							value={this.state.type}/>
 				</Table.Cell>
 				<Table.Cell>
-					<input type="number"
-							name="count"
+					<input type="text"
+							name="aineet"
 							onChange={this.onChange}
-							value={this.state.count}/>
+							value={this.state.aineet}/>
+				</Table.Cell>
+				<Table.Cell>
+					<input type="text"
+							name="ohje"
+							onChange={this.onChange}
+							value={this.state.ohje}/>
+				</Table.Cell>
+				<Table.Cell>
+					<input type="text"
+							name="keyword"
+							onChange={this.onChange}
+							value={this.state.keyword}/>
 				</Table.Cell>
 				<Table.Cell>
 					<input type="number"

@@ -10,8 +10,8 @@ router.get("/shopping",function(req,res) {
 	if(req.query.type) {
 		query["type"] = req.query.type.toLowerCase();
 	}
-	if(req.query.price) {
-		query["price"]= {$lte:req.query.price}
+	if(req.query.keyword) {
+		query["keyword"] = req.query.keyword.toLowerCase();
 	}
 	itemModel.find(query,function(err,items) {
 		if(err) {

@@ -1,4 +1,3 @@
-  
 import React from 'react';
 import {Form,Button} from 'semantic-ui-react';
 
@@ -44,18 +43,32 @@ export default class ShoppingForm extends React.Component {
 			}>
 			<Form onSubmit={this.onSubmit}>
 				<Form.Field>
-					<label htmlFor="type">Item Type:</label>
+					<label htmlFor="type">Name:</label>
 					<input type="text"
 							name="type"
 							onChange={this.onChange}
 							value={this.state.type}/>
 				</Form.Field>
 				<Form.Field>
-					<label htmlFor="count">Count:</label>
-					<input type="number"
-							name="count"
+					<label htmlFor="aineet">Aineet:</label>
+					<input type="text"
+							name="aineet"
 							onChange={this.onChange}
-							value={this.state.count}/>
+							value={this.state.aineet}/>
+				</Form.Field>
+				<Form.Field>
+					<label htmlFor="ohje">Ohje:</label>
+					<input type="text"
+							name="ohje"
+							onChange={this.onChange}
+							value={this.state.ohje}/>
+				</Form.Field>
+				<Form.Field>
+					<label htmlFor="keyword">Keywords:</label>
+					<input type="text"
+							name="keyword"
+							onChange={this.onChange}
+							value={this.state.keyword}/>
 				</Form.Field>
 				<Form.Field>
 					<label htmlFor="price">Price:</label>
